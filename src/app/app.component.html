@@ -1,0 +1,46 @@
+
+<form #contactForm="ngForm" (ngSubmit)="formSubmit(contactForm)">
+ 
+<p>
+  <label >First Name</label>
+  <input type="text" id="firstname" required minlength="5" name="fname"   #fname="ngModel" ngModel>
+  <span *ngIf="fname.invalid && fname.touched" > Invalid First Name</span>
+</p>
+
+<p>
+  <label f>Last Name</label>
+  <input type="text" id="lastname" required minlength="1" name="lname" #lname="ngModel" ngModel>
+  <span *ngIf="lname.invalid && lname.touched" > Invalid Last Name</span>
+</p>
+
+
+<p>
+<label >PinCode</label>
+<input type="text" id="no" name="luckyno" ngModel>
+</p>
+
+<p>
+  <label >Email </label>
+  <input type="text" id="email"  name="email" ngModel>
+</p>
+
+<p>
+  <label >Geneder</label>
+  <input type="radio" value="male" id="gender" name="gender"> Male
+  <input type="radio" value="female" id="gender" name="gender" ngModel> Female
+</p>
+
+<p>
+  <label >Hobby</label>
+  <input type="checkbox" value="cricket" id="checkbox" name="cricket" ngModel> Cricket
+  <input type="checkbox" value="chess" id="checkbox" name="chess" ngModel> Chess
+  <input type="checkbox" value="swimming" id="checkbox" name="chess" ngModel> Swimming
+</p>
+
+<p>
+  <button type="submit" [disabled]="contactForm.invalid" (click)="formSubmit">Submit </button>
+</p>
+
+</form>
+
+
