@@ -3,13 +3,13 @@
  
 <p>
   <label >First Name</label>
-  <input type="text" id="firstname" required minlength="5" name="fname"   #fname="ngModel" ngModel>
+  <input type="text" id="firstname" pattern="[A-Za-z]{3,32}" name="fname"   #fname="ngModel" ngModel>
   <span *ngIf="fname.invalid && fname.touched" > Invalid First Name</span>
 </p>
 
 <p>
   <label f>Last Name</label>
-  <input type="text" id="lastname" required minlength="1" name="lname" #lname="ngModel" ngModel>
+  <input type="text" id="lastname" pattern="[A-Za-z]{3,32}" name="lname" #lname="ngModel" ngModel>
   <span *ngIf="lname.invalid && lname.touched" > Invalid Last Name</span>
 </p>
 
